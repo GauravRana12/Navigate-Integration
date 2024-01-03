@@ -1,9 +1,9 @@
 'use client'
+import Image from 'next/image'
 import { Fragment } from 'react'
-import '@/app/globals.css'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import Image from 'next/image'
+
 const navigation = [
   { name: 'Dashboard', href: '#', current: true },
   { name: 'Team', href: '#', current: false },
@@ -11,13 +11,13 @@ const navigation = [
   { name: 'Calendar', href: '#', current: false },
 ]
 
-
-function classNames(...classes:any) {
+function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
-const Nav = () => {
+export default function Home() {
   return (
-    <Disclosure as="nav" className="bg-gray-800">
+    <main className="">
+       <Disclosure as="nav" className="bg-gray-800">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -38,7 +38,7 @@ const Nav = () => {
                 <div className="flex flex-shrink-0 items-center">
                   <img
                     className="h-8 w-auto"
-                    src="https://assets2.razerzone.com/images/phoenix/razer-ths-logo.svg"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
                     alt="Your Company"
                   />
                 </div>
@@ -151,7 +151,6 @@ const Nav = () => {
         </>
       )}
     </Disclosure>
+    </main>
   )
 }
-
-export default Nav
